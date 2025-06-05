@@ -14,6 +14,7 @@
         <% RESTAURANT.menu.forEach(item => { %>
           <% if (item.category === 'mains') { %>
             <li>
+              <%= item.rating === 5 ? ' ⭐' : '' %>
               <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %>  
               <br>
               <%= item.details %>
@@ -27,6 +28,7 @@
       <% RESTAURANT.menu.forEach(item => { %>
         <% if (item.category === 'sides') { %>
           <li>
+            <%= item.rating === 5 ? ' ⭐' : '' %>
             <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %>  
             <br>
             <%= item.details %>
@@ -40,6 +42,7 @@
     <% RESTAURANT.menu.forEach(item => { %>
         <% if (item.category === 'desserts') { %>
           <li>
+            <%= item.rating === 5 ? ' ⭐' : '' %>
             <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %>  
             <br>
             <%= item.details %>

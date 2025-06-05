@@ -60,6 +60,11 @@ app.get('/menu', (req, res) => {
 })
 
 app.get('/menu/:category', (req, res) => {
+  const category = req.params.category.toLowerCase()
+  const catList = RESTAURANT.menu.filter(item => item.category === category)
+
+  res.locals.category = category
+  res.locals.catList = catList
 res.render('category.ejs')
 })
 

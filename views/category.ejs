@@ -8,5 +8,19 @@
 <body>
     <%- include('./partials/nav') %>
 
-    
+    <h1><%= category.charAt(0).toUpperCase() + category.slice(1) %> Menu</h1>
+
+<ul>
+
+    <% catList.forEach(item => { %>
+      <li>
+        <%= item.rating === 5 ? ' ⭐' : '' %>
+        <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %><br>
+        Rating: <%= item.rating %>/5<br>
+        <em><%= item.details %></em>
+      </li>
+    <% }); %>
+
+</ul>
+
 </body>
